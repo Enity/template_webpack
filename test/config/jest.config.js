@@ -1,6 +1,6 @@
 module.exports = {
   verbose: true,
-  rootDir: '../',
+  rootDir: '../../',
   testMatch: ['<rootDir>/tests/**/*.js'],
   testPathIgnorePatterns: ['/node_modules/', 'jest.config.js'],
   moduleNameMapper: {

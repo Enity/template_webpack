@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --progress --config config/webpack.conf.js",
-    "test": "jest --config ./tests/jest.config.js",
-    "start": "run run dev"
+    "test": "jest --config ./test/comfig/jest.config.js",
+    "start": "npm run dev",
+    "build": "webpack --config config/webpack.conf.js"
   },
   "author": "",
   "license": "ISC",
