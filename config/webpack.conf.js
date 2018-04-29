@@ -4,43 +4,40 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   devServer: {
-    contentBase: './dist',
-    clientLogLevel: 'warning'
+    contentBase: '../dist',
+    clientLogLevel: 'warning',
+    stats: 'minimal'
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '../dist')
   },
   devtool: 'inline-source-map',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+        exclude: /node_modules/
+      },
+      {
+        enforce: "pre",
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        loader: "source-map-loader",
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader'
-          }
-        ]
+        loader: 'html-loader'
       },
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'style-loader' // creates style nodes from JS strings
-          },
-          {
-            loader: 'css-loader' // translates CSS into CommonJS
-          },
-          {
-            loader: 'sass-loader' // compiles Sass to CSS
-          }
+          { loader: 'style-loader' },  // creates style nodes from JS strings
+          { loader: 'css-loader' },// translates CSS into CommonJS
+          { loader: 'sass-loader' } // compiles Sass to CSS
         ]
       }
     ]
