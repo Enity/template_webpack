@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  
   devServer: {
     contentBase: './dist',
-    clientLogLevel: 'warning'
+    clientLogLevel: 'warning',
+    stats: 'minimal'
   },
   output: {
     filename: 'bundle.js',
