@@ -1,13 +1,17 @@
-# Clear template: webpack+babel+sass+hot reload server
+# Webpack template
 
-### Installing
+## Whats included
+
+1. webpack + dev server
+1. sass loader
+1. eslint
+1. jest
+
+### Scripts
 
 ```sh
-npm install --save-dev
+npm start
+npm run test
+npm run build
 ```
 
-## Running 
-
-```sh
-npm run dev
-```
